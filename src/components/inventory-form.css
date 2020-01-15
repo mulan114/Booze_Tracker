@@ -1,0 +1,33 @@
+.boozeEach {
+    display: flex;
+    width: 700px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #7644F1;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.boozeEach div, .boozeEach input {
+	flex: 1;
+}
+
+/*.boozeEach input {
+	width: 1%;
+}*/
+
+.brandBlock {
+	display: inline-block;
+	margin: 0;
+	
+}
+
+.nameBlock {
+	display: inline-block;
+	margin: 0;
+}
+
+.currentInvBlock {
+	display: inline-block;
+	margin: 0;
+}

@@ -1,0 +1,37 @@
+.boozeEach {
+    display: flex;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #7644F1;
+    margin: 0;
+}
+
+.brandBlock {
+	width: 110px;
+	display: inline-block;
+	margin: 0;
+}
+
+.nameBlock {
+	width: 130px;
+	display: inline-block;
+	margin: 0;
+}
+
+.lastUsageBlock {
+	width: 130px;
+	display: inline-block;
+	margin: 0;
+}
+
+.currentUsageBlock {
+	width: 150px;
+	display: inline-block;
+	margin: 0;
+}
+
+.onHandBlock {
+	width: 100px;
+	display: inline-block;
+	margin: 0;
+}
