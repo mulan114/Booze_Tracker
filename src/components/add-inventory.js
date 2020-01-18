@@ -12,7 +12,7 @@ export default class AddInventory extends React.Component {
 			names: []
 		}
 
-		fetch('https://git.heroku.com/booze-tracking-api.git:8080/booze/booze-pull/'+localStorage.getItem('token'), {
+		fetch('https://booze-tracking.herokuapp.com/booze/booze-pull/'+localStorage.getItem('token'), {
         	headers: { 
         		'Content-Type': 'application/json',
         		'Authorization': localStorage.getItem('token') 
@@ -89,7 +89,7 @@ export default class AddInventory extends React.Component {
 		console.log(updateObj);
 
 
-		fetch('https://git.heroku.com/booze-tracking-api.git:8080/'+localStorage.getItem('token'), {
+		fetch('https://booze-tracking.herokuapp.com/'+localStorage.getItem('token'), {
         	headers: { 
         		'Content-Type': 'application/json',
         		'Authorization': localStorage.getItem('token') 

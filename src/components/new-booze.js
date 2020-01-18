@@ -24,7 +24,7 @@ export default class NewBooze extends React.Component {
 		evt.preventDefault();
 		console.log('on submit in new booze');
 		console.log(this.state);
-        fetch('https://git.heroku.com/booze-tracking-api.git:8080/booze/new-booze/'+localStorage.getItem('token'), {
+        fetch('https://booze-tracking.herokuapp.com/booze/new-booze/'+localStorage.getItem('token'), {
         	headers: {
         		'Content-Type': 'application/json',
         		'Authorization': localStorage.getItem('token')
