@@ -23,7 +23,7 @@ export default class InvForm extends React.Component {
 		};
 		console.log(updateInfo);
 
-		fetch('https://booze-tracking.herokuapp.com/booze/inventory/'+localStorage.getItem('token'), {
+		fetch('https://booze-tracking-api.herokuapp.com/booze/inventory/'+localStorage.getItem('token'), {
         	headers: { 
         		'Content-Type': 'application/json',
         		'Authorization': localStorage.getItem('token')

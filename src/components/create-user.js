@@ -27,7 +27,7 @@ export default class CreateUser extends React.Component {
 
 		console.log(JSON.stringify(userInfo));
 
-		fetch('https://booze-tracking.herokuapp.com/users/create-user', {
+		fetch('https://booze-tracking-api.herokuapp.com/users/create-user', {
         	headers: 
         		{ 'Content-Type': 'application/json' },
             method: 'POST',

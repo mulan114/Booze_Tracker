@@ -28,7 +28,7 @@ export default class LandingPage extends React.Component {
 
 		console.log(JSON.stringify(userInfo));
 
-		fetch('https://booze-tracking.herokuapp.com/users/login', {
+		fetch('https://booze-tracking-api.herokuapp.com/users/login', {
         	headers: 
         		{ 'Content-Type': 'application/json' },
             method: 'POST',
