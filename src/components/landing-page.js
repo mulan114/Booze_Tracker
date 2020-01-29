@@ -72,12 +72,14 @@ export default class LandingPage extends React.Component {
 		console.log('i am in landing page');
 		return (
 			<div>
-				<h1>Welcome to Booze Tracker</h1>
-				<h2>Your simple tool for tracking inventory and usage</h2>
+				<h1>Welcome to Booze Tracker!</h1>
+				<h3>This simple tool helps restaurants conduct inventory and track liquor usage</h3>
+				<p>Once logged in, Booze Tracker will automatically take you to the inventory page where you can update your current on hand stock. At any time, feel free to click on the REPORT link above to see your last and current usages.  To add new liquor or add to your existing inventory, click on "Add New Liquor" or "Add to Inventory" respectively!</p>
 				<br /><br />
 				<form className="regnauth" onSubmit={this.onSubmit.bind(this)}>
 					<h2>Please login or create an account</h2>
 					Username  <input type="email" name="userName" value = {this.state.userName} placeholder="email address" required onChange={this.onChange.bind(this)} />
+					<br />
 					Password  <input type="password" name="password" value = {this.state.password} required onChange={this.onChange.bind(this)} />
 					<br />
 					<button name="login"> Login </button>

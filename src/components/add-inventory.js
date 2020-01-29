@@ -114,7 +114,10 @@ export default class AddInventory extends React.Component {
 				groups: [],
 				brands: [],
 				names: [],
+				purDate: "",
+				purAmt: "",
 			})
+			alert('liquor purchase recorded');
 		})
 	}
 

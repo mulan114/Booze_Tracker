@@ -1,4 +1,5 @@
 import React from 'react';
+import tick from './tick.jpg';
 
 import './inventory-form.css';
 
@@ -46,7 +47,10 @@ export default class InvForm extends React.Component {
 		})
 		.catch(err => {
 			console.log('i erred and did not return empty string');
-		})
+		});
+
+		document.getElementById(boozeId).removeAttribute("hidden");
+
 	}
 
 	render() {
@@ -63,12 +67,13 @@ export default class InvForm extends React.Component {
 					<ul>{
 						this.props.data.map(element => {
 							return (
-								<form className="boozeEach" onSubmit={(e) => {this.onSubmit(e, element._id)}}>
-									<div clasName="brandBlock">{element.brand} </div>
-									<div className="nameBlock">{element.name}</div>
+								<form className="boozeEachInv" onSubmit={(e) => {this.onSubmit(e, element._id)}}>
+									<div clasName="brandBlockInv">{element.brand} </div>
+									<div className="nameBlockInv">{element.name}</div>
 						 			<div className="currentInvBlock"> Current Status: </div>
 						 			<input className = "invAmt" type="number" step="0.1" size="4" required onChange={this.onChange.bind(this)} />
 						 			<button value={element._id}>Submit</button>
+						 			<img id={element._id} hidden src={tick} alt="ok" height="20" width="20" />
 								</form>
 							)
 						})

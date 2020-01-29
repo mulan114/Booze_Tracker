@@ -1,11 +1,5 @@
-.App {
 
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
+/*
 .App-header {
   background-color: #472E74;
   min-height: 100vh;
@@ -15,8 +9,58 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+}*/
 
 .App-link {
   color: #09d3ac;
+}
+
+.top-menu *:hover {
+    cursor: pointer;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.menu-icon {
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+@media screen and (max-width: 640px) {
+    .top-menu.untoggled {
+        padding: 40px 20px 20px 20px;
+        max-height: 0;
+    }
+
+    .top-menu.untoggled {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .top-menu.toggled {
+        padding: 60px 0 0 0;
+        max-height: 1500px;
+        transition: max-height 1s;
+    }
+
+    .top-menu.toggled *:not(.top-menu-icon) {
+        float: none;
+        display: block !important;
+        text-align: right;
+        margin: 0;
+    }
+
+    .top-menu-icon {
+        display: none;
+    }
 }

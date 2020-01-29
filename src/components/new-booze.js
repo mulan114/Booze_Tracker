@@ -55,7 +55,7 @@ export default class NewBooze extends React.Component {
 			});
 		});
 
-		console.log('new booze submit works');
+		alert('new liquor added to inventory');;
 	}
 
 	render() {
