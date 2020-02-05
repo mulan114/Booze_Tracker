@@ -85,6 +85,7 @@ export default class LandingPage extends React.Component {
 					<br /><br />
 					<form className="regnauth" onSubmit={this.onSubmit.bind(this)}>
 						<h2>Please login or create an account</h2>
+						<p>If would like to test this product, please enter username: demo@thinkful.com and password: thinkful</p>
 						Username  <input type="email" name="userName" value = {this.state.userName} placeholder="email address" required onChange={this.onChange.bind(this)} />
 						<br />
 						Password  <input type="password" name="password" value = {this.state.password} required onChange={this.onChange.bind(this)} />
