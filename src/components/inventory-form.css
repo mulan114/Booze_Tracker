@@ -1,3 +1,7 @@
+section {
+	width: fit-content;
+}
+
 .boozeEachInv {
     display: grid;
     grid-template-columns: repeat(12, 5vw);

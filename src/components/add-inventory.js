@@ -12,7 +12,8 @@ export default class AddInventory extends React.Component {
 			names: []
 		}
 
-		fetch('https://booze-tracking-api.herokuapp.com/booze/booze-pull/'+localStorage.getItem('token'), {
+		// fetch('https://booze-tracking-api.herokuapp.com/booze/booze-pull/'+localStorage.getItem('token'), {
+		fetch('http://localhost:8080/booze/booze-pull/'+localStorage.getItem('token'), {
         	headers: { 
         		'Content-Type': 'application/json',
         		'Authorization': localStorage.getItem('token') 
@@ -88,8 +89,8 @@ export default class AddInventory extends React.Component {
 
 		console.log(updateObj);
 
-
-		fetch('https://booze-tracking-api.herokuapp.com/'+localStorage.getItem('token'), {
+		fetch('https://booze-tracking-api.herokuapp.com/booze/add-inventory/'+localStorage.getItem('token'), {
+		// fetch('http://localhost:8080/booze/add-inventory/'+localStorage.getItem('token'), {
         	headers: { 
         		'Content-Type': 'application/json',
         		'Authorization': localStorage.getItem('token') 
@@ -117,7 +118,7 @@ export default class AddInventory extends React.Component {
 				purDate: "",
 				purAmt: "",
 			})
-			alert('liquor purchase recorded');
+			alert('Liquor purchase recorded. Please add another new liquor or click a new action link.');
 		})
 	}
 

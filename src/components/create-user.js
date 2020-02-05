@@ -5,6 +5,15 @@ import React from 'react';
 export default class CreateUser extends React.Component {
 	constructor(props) {
 		super(props);
+	
+		this.state = {
+			org: '',
+			userName: '',
+			firstName: '',
+			lastName: '',
+			password: '',
+		}
+
 	}
 
 	onChange(evt) {
@@ -28,18 +37,29 @@ export default class CreateUser extends React.Component {
 		console.log(JSON.stringify(userInfo));
 
 		fetch('https://booze-tracking-api.herokuapp.com/users/create-user', {
+		// fetch('http://localhost:8080/users/create-user', {
         	headers: 
         		{ 'Content-Type': 'application/json' },
             method: 'POST',
             body: JSON.stringify(userInfo)
         })
+        .then(res => {
+        	console.log('i am in create user');
+        	if (res.status === 401) {
+        		alert('Please provide entries for all fields')
+        	}
+        	else if (res.status === 404) {
+        		alert('This user already exists.');
+        	}
+        	else {
+        		return res.json();
+            }
+        })
         .then(responseJson => {
-            if (responseJson.status === 404) {
-                alert('This user already exists.');
-            } 
-            else {
-                alert('Success! New user created.');
-                this.props.history.replace('/inventory');
+        	if (responseJson) {
+                alert(responseJson.message);
+                localStorage.setItem('token', responseJson.data.token);
+                window.location.href='/inventory';
             }
         })
 	}
@@ -53,7 +73,7 @@ export default class CreateUser extends React.Component {
 					<br /><br />
 					Organization <input type="text" name="org" onChange={this.onChange.bind(this)} />
 					<br /><br />
-					Username  <input type="email" name="userName" placeholder="email address" required onChange={this.onChange.bind(this)} />
+					Username  <input type="email" name="userName" placeholder="email address" onChange={this.onChange.bind(this)} />
 					<br /><br />
 					First Name  <input type="text" name="firstName" onChange={this.onChange.bind(this)} />
 					<br /><br />
@@ -62,6 +82,7 @@ export default class CreateUser extends React.Component {
 					Password  <input type="password" name="password" onChange={this.onChange.bind(this)} />
 					<br /><br />
 					<button name="createnlogin"> Create & Login </button>
+					<button type="button" name="goback" onClick={()=>{window.location.href='/'}}> Back to Login </button>
 				</form>
 			</div>
 		);

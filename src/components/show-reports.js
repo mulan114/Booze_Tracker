@@ -23,6 +23,7 @@ export default class ShowReports extends React.Component {
 			}]
 		}
 		fetch('https://booze-tracking-api.herokuapp.com/reports/show-reports/'+localStorage.getItem('token'), {
+		// fetch('http://localhost:8080/reports/show-reports/'+localStorage.getItem('token'), {
         	headers: { 
         		'Content-Type': 'application/json',
         		'Authorization': localStorage.getItem('token') 

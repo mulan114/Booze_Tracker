@@ -25,6 +25,7 @@ export default class NewBooze extends React.Component {
 		console.log('on submit in new booze');
 		console.log(this.state);
         fetch('https://booze-tracking-api.herokuapp.com/booze/new-booze/'+localStorage.getItem('token'), {
+        // fetch('http://localhost:8080/booze/new-booze/'+localStorage.getItem('token'), {
         	headers: {
         		'Content-Type': 'application/json',
         		'Authorization': localStorage.getItem('token')
@@ -55,7 +56,7 @@ export default class NewBooze extends React.Component {
 			});
 		});
 
-		alert('new liquor added to inventory');;
+		alert('New liquor added to inventory. Please add another new liquor or click a new action link.');;
 	}
 
 	render() {

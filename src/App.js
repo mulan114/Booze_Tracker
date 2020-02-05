@@ -37,7 +37,6 @@ export default class App extends React.Component {
 			return (
 			    <div className="App">
 					<header className = {top_menu_class}>
-						<Item text="  Home  "/>
 						<Item text="  Inventory  " />
 						<Item text="  Report  " />
 						<Item text="  Add to Inventory  " />
@@ -55,7 +54,7 @@ export default class App extends React.Component {
 			return (
 			    <div className="App">
 					<header className = {top_menu_class}>
-						<Item link="  Home  "/>
+						<Item text="  Home  "/>
 					</header>
 			      	<FontAwesomeIcon icon={faBars} className='menu-icon' onClick={(e) => {this.setToggleTopMenuClass(e)}}/>
 			      	<div className='clear-fix' />

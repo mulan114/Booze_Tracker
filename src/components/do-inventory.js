@@ -24,6 +24,7 @@ export default class DoInventory extends React.Component {
 		}
 
 		fetch('https://booze-tracking-api.herokuapp.com/booze/inventory/'+localStorage.getItem('token'), {
+		// fetch('http://localhost:8080/booze/inventory/'+localStorage.getItem('token'), {
 			headers: { 
 				'Content-Type': 'application/json',
 				'Authorization': localStorage.getItem('token') 

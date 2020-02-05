@@ -6,7 +6,7 @@ export default class Logout extends React.Component {
 	render() {
 		console.log('i am in logout');
 		localStorage.removeItem('token');
-		this.props.history.replace('/');
+		window.location.href='/';
 		return('')
 	}
 }
